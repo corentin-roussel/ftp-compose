@@ -1,0 +1,9 @@
+lpf
+lpf_serv
+server/obj/*
+client/obj/*
+transfer/obj/*
+files/*.txt
+files/*.cia
+*.cia
+*.txt
