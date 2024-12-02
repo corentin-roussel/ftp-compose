@@ -5,18 +5,10 @@ services:
       dockerfile: Dockerfile-server
     container_name: lfp_server
     ports:
-      - "8050:80"  # Hôte : Container
+      - "8050:8050"  # Hôte : Container
 
-#  lfp_client:
-#    build:
-#      context: .
-#      dockerfile: Dockerfile-client
-#    container_name: lfp_client
-#    environment:
-#      - DATABASE_HOST=kronos-bdd
-#      - POSTGRES_USER=myuser          # Utilisateur PostgreSQL
-#      - POSTGRES_PASSWORD=mypassword  # Mot de passe PostgreSQL
-#      - POSTGRES_DB=kronos            # Nom de la base de données
-#      - DATABASE_PORT=5432
-#    ports:
-#      - "8090:8090"  # Hôte : Container
+  lfp_client:
+    build:
+      context: .
+      dockerfile: Dockerfile-client
+    container_name: lfp_client

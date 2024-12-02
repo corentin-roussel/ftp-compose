@@ -5,7 +5,7 @@ RUN apt update && apt upgrade -y && \
     apt install -y build-essential gdb cmake
 
 # Créer le répertoire pour le code
-WORKDIR /lfp_serv
+WORKDIR /lfp_client
 
 # Copier le contenu du dossier "ftp-compose" dans le conteneur
 COPY app/. .
@@ -13,5 +13,7 @@ COPY app/. .
 # Compiler le programme
 RUN make
 
-# Lancer le programme
-CMD ["./lfp_serv", "8050"]
+RUN echo "totototo" > toto.txt
+
+# Lancer le programme avec les bons arguments
+CMD ["./lfp", "lfp_server:8050", "-upload", "toto.txt"]
