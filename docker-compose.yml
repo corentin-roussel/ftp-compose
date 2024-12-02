@@ -6,6 +6,8 @@ services:
     container_name: lfp_server
     ports:
       - "8050:8050"  # Hôte : Container
+    expose:
+      - "8050"
 
   lfp_client:
     build:
