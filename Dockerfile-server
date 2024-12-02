@@ -1,0 +1,17 @@
+FROM debian:latest
+
+# Mettre à jour les dépôts et installer les outils nécessaires
+RUN apt update && apt upgrade -y && \
+    apt install -y build-essential gdb cmake
+
+# Créer le répertoire pour le code
+WORKDIR /lfp_serv
+
+# Copier le contenu du dossier "ftp-compose" dans le conteneur
+COPY ftp-compose/. .
+
+# Compiler le programme
+RUN make
+
+# Lancer le programme
+CMD ["./lfp_serv 8050"]
