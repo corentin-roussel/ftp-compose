@@ -8,7 +8,7 @@ RUN apt update && apt upgrade -y && \
 WORKDIR /lfp_serv
 
 # Copier le contenu du dossier "ftp-compose" dans le conteneur
-COPY ftp-compose/. .
+COPY app/. .
 
 # Compiler le programme
 RUN make
