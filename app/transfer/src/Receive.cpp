@@ -77,7 +77,6 @@ int64_t Receive::receiveDownloadFile(int fileDescriptor, int chunkSize) {
 
     if(fileExists(exePath.c_str())) {
         std::cerr << "File already exists. " << std::strerror(errno) <<std::endl;
-        exit(0);
     }
     fs::path filePath = fs::current_path();
     filePath.append(fileName);
@@ -123,7 +122,6 @@ int64_t Receive::receiveFile(int fileDescriptor, int chunkSize) {
 
     if(fileExists(fileName)) {
         std::cerr << "File already exists. " << std::strerror(errno) <<std::endl;
-        exit(0);
     }
     std::string fileReceive;
     fileReceive.append(getExePath(buffertest)); 
