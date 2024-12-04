@@ -16,4 +16,4 @@ RUN make
 RUN echo "totototo" > toto.txt
 
 # Lancer le programme avec les bons arguments
-CMD ["./lfp", "lfp_server:8050", "-upload", "toto.txt"]
+CMD ["./lfp", "lfp_server:8050", "-upload", "lorem.txt"]
